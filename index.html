@@ -1,285 +1,217 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><!-- IMPORTANTE: este arquivo PRECISA se chamar index.html e este DOCTYPE precisa ser a PRIMEIRA linha --><html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>um menino apaixonado</title>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Georgia', serif;
-}
-
-body {
-  background: linear-gradient(180deg, #ffb6c1, #ff69b4);
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* ===== ELEMENTOS CAINDO ===== */
-.falling {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diário de um menino apaixonado</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+      color:#fff;
+      margin:0;
+      padding:0;
+      line-height:1.9;
+      overflow-x:hidden;
+    }/* Corações caindo */
+.heart {
   position: fixed;
-  top: -40px;
-  font-size: 24px;
-  animation: fall linear infinite;
-  opacity: 0.9;
+  top: -10px;
+  color: #ff4d6d;
+  font-size: 18px;
+  animation: fall linear forwards;
+  opacity: 0.8;
+  z-index: 0;
 }
-
 @keyframes fall {
-  0% { transform: translateY(-40px); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateY(110vh); opacity: 0; }
-}
-
-/* ===== LIVRO ===== */
-.book {
-  width: 90%;
-  max-width: 900px;
-  height: 550px;
-  margin: 80px auto;
-  perspective: 2000px;
-}
-
-.page {
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  color: #fff;
-  position: absolute;
-  border-radius: 20px;
-  padding: 40px;
-  transform-origin: left;
-  transition: transform 1s;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
-}
-
-.page h1, .page h2 {
-  color: #ffb6c1;
-  margin-bottom: 20px;
-}
-
-.page p {
-  line-height: 1.8;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.page.flipped {
-  transform: rotateY(-180deg);
-}
-
-/* ===== BOTÕES ===== */
-.controls {
-  text-align: center;
-  margin-top: 20px;
-}
-
-button {
-  padding: 12px 25px;
-  margin: 10px;
-  font-size: 18px;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  background: #ff004f;
-  color: #fff;
-  transition: transform 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
-}
-
-/* ===== EU TE AMO ===== */
-#amor {
-  display: none;
-  text-align: center;
-  font-size: 50px;
-  margin-top: 20px;
-  color: #ff69b4;
-  animation: pulse 1s infinite alternate;
-}
-
-@keyframes pulse {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
-}
-</style>
-</head>
-
-<body>
-
-<div class="book">
-
-  <!-- ===== PÁGINA 1 ===== -->
-  <div class="page" id="page1">
-    <h1>um Menino Apaixonado</h1>
-
-    <p>
-      Desde <strong>maio de 2025</strong>, quando te conheci pelo Instagram,
-      algo em mim mudou.
-    </p>
-
-    <p>
-      <!-- 👉 COLE AQUI O TEXTO DE INTRODUÇÃO -->Em maio de 2025 eu não fazia ideia de que conheceria alguém que se tornaria tão importante pra mim.
-Eu não acredito em acaso. Acredito que tudo na vida acontece com propósito, no tempo certo, do jeito certo — e você é prova disso.
-Eu não sei até onde vamos ficar juntos, nem por quanto tempo a vida vai permitir, mas sei de uma coisa: enquanto estivermos juntos, eu vou estar do teu lado. Vou te apoiar estando perto ou longe, junto ou separado, porque torcer por você nunca vai depender da situação.
-Espero, de verdade, que tudo aquilo que planejamos e tudo o que já falamos um dia se conclua.
-E mais do que isso, eu quero que na sua vida a ordem seja clara:
-Deus em primeiro lugar,
-seus pais,
-seus sonhos,
-você,
-e eu em último.
-Porque eu jamais quero ser um motivo pra você deixar de ir atrás de algo que te faz crescer.
-Você é estudiosa, atenciosa… e eu lembro bem das vezes em que você deixou de estudar pra prova só pra ficar ali, conversando comigo. Lembro do seu jeitinho tímido no começo, da insegurança pra me abraçar, pra me beijar — e saiba que esses são alguns dos detalhes mais bonitos que eu vejo em você.
-Você tem um jeito único e especial de ser. Ri de tudo, ri alto, me morde, demonstra carinho da sua própria forma. E é exatamente isso que te faz ser você. Só não deixe nunca de demonstrar seu amor por mim, porque eu sinto, valorizo e guardo cada gesto.
-Eu te amo muito.
-E do fundo do coração, espero que a gente continue junto até ficarmos velhinhos, cheios de histórias pra contar.
-Feliz Natal, meu amor. 
-    </p>
-
-    <div class="controls">
-      <button onclick="nextPage()">Virar página ➜</button>
-    </div>
-  </div>
-
-  <!-- ===== PÁGINA 2 ===== -->
-  <div class="page" id="page2">
-    <h2>Poema I</h2>
-
-    <p>
-      <!-- 👉 COLE AQUI O PRIMEIRO POEMA --> Ela parece ter saído de Stranger Things,
-dessas que carregam mistério no olhar
-e deixam a gente curioso
-sem precisar dizer uma palavra.
-No fone, Stray Kids tocando,
-energia caótica, intensa,
-do tipo que não segue padrão
-e transforma diferença em identidade.
-Ela não é cantora,
-mas às vezes parece.
-Tem algo nela que lembra uma estrela do k-pop,
-a postura, o brilho,
-como se fosse alguém que nasceu pra palco
-mesmo vivendo fora dele.
-É tímida quando quer,
-mas quando se solta, ri alto,
-ri de tudo,
-faz piada sem graça
-e ainda consegue me ganhar no meio disso.
-Tem um jeito único de demonstrar carinho:
-me provoca, me morde,
-cuida sem perceber
-e ama do jeito mais verdadeiro que existe.
-Se a vida fosse uma série,
-ela seria aquela que eu nunca pulo a intro.
-Se fosse música,
-seria minha favorita no repeat.
-E no meio de tanto caos bonito,
-ela virou o meu lugar seguro
-— sem roteiro, sem ensaio,
-só sendo ela.
-    </p>
-
-    <div class="controls">
-      <button onclick="nextPage()">Virar página ➜</button>
-    </div>
-  </div>
-
-  <!-- ===== PÁGINA 3 ===== -->
-  <div class="page" id="page3">
-    <h2>Poema II</h2>
-
-    <p>
-      <!-- 👉 COLE AQUI O SEGUNDO POEMA -->Ela chega quieta, meio tímida,
-mas quando fala… já era.
-Brincalhona no momento errado,
-dona oficial das piadas sem graça
-(e eu, hater número um, com orgulho).
-Cabelo meio ruivo,
-cor de pôr do sol que não decide se fica ou vai,
-igual ela quando finge calma
-mas já tá estressada por dentro
-— linda até brava, injustiça isso.
-Gentil nos detalhes,
-bonita sem esforço,
-dessas que não precisam provar nada
-porque só existindo já roubam a cena.
-Eu reclamo, implico, faço drama,
-finjo que não ligo pras piadas ruins,
-mas no fundo sei:
-ser hater dela é só meu jeito torto
-de amar alguém que é tudo isso
-sem nem tentar.
-    </p>
-
-    <div class="controls">
-      <button onclick="nextPage()">Virar página ➜</button>
-    </div>
-  </div>
-
-  <!-- ===== PÁGINA 4 ===== -->
-  <div class="page" id="page4">
-    <h2>O que é amar você</h2>
-
-    <p>
-      <!-- 👉 COLE AQUI O TEXTO EXPLICANDO COMO É AMAR ELA -->Amar você é me sentir especial sem precisar provar nada.
-É saber que, mesmo nos dias comuns, existe alguém que me escolhe — e esse alguém é você.
-Eu amo os seus abraços, aqueles que me envolvem por inteiro e fazem o mundo ficar em silêncio por alguns segundos. Abraços que acalmam, que confortam, que dizem “tá tudo bem” sem precisar de palavra nenhuma.
-Amo os seus beijos, do jeito que eles acontecem, com carinho, com verdade, com aquele cuidado que só quem sente de verdade sabe ter.
-Eu amo as coisas que a gente faz junto, até as mais simples. Conversar sobre nada, rir do que só a gente entende, planejar o futuro como se ele já fosse nosso. Com você, tudo ganha um significado diferente. O tempo passa mais leve, os momentos ficam mais vivos, e até o silêncio vira companhia.
-Amar você é me sentir em casa.
-É sentir paz e bagunça ao mesmo tempo.
-É saber que existe alguém que me entende, que me escuta, que me sente.
-Cada detalhe seu me prende: o jeito que você demonstra carinho, a forma como cuida, como se preocupa, como se faz presente. São nessas pequenas coisas que eu percebo o quanto te amar é algo raro.
-Talvez o mundo lá fora continue correndo, cheio de cobranças e ruídos. Mas quando você me abraça, tudo desacelera. E naquele instante, eu tenho certeza de que é ali que eu quero estar.
-Amar você é escolher ficar.
-É escolher cuidar.
-É escolher viver cada momento como se fosse único, porque com você, tudo realmente é.
-    </p>
-
-    <button onclick="mostrarAmor()">Clique aqui</button>
-    <div id="amor">EU TE AMO ❤️</div>
-  </div>
-
-</div>
-
-<script>
-let currentPage = 1;
-
-function nextPage() {
-  const page = document.getElementById("page" + currentPage);
-  if (page) {
-    page.classList.add("flipped");
-    console.log("Página virada:", currentPage);
-    currentPage++;
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
   }
 }
 
-function mostrarAmor() {
-  document.getElementById("amor").style.display = "block";
-  console.log("EU TE AMO exibido");
+header {
+  padding:70px 20px 60px;
+  text-align:center;
+  background:linear-gradient(180deg, #1c1c1c, #0b0b0b);
+  position:relative;
+  z-index:1;
+}
+header h1 {
+  font-size:44px;
+  margin-bottom:12px;
+}
+header p {
+  font-size:18px;
+  opacity:0.85;
 }
 
-/* ===== ANIMAÇÕES DE FUNDO ===== */
-const itens = ["🌹", "❤️", "🤍", "🔥"];
-
-function criarItem() {
-  const el = document.createElement("div");
-  el.classList.add("falling");
-  el.innerText = itens[Math.floor(Math.random() * itens.length)];
-  el.style.left = Math.random() * 100 + "vw";
-  el.style.animationDuration = (Math.random() * 5 + 5) + "s";
-  document.body.appendChild(el);
-
-  setTimeout(() => el.remove(), 10000);
+main {
+  max-width:760px;
+  margin: auto;
+  padding: 0 18px;
+  position:relative;
+  z-index:1;
 }
 
-setInterval(criarItem, 400);
-</script>
+section {
+  padding:60px 0;
+}
 
-</body>
+.capitulo h2 {
+  font-size:30px;
+  margin-bottom:28px;
+  border-left:4px solid #ff4d6d;
+  padding-left:14px;
+}
+
+.poema {
+  font-size:21px;
+  font-style:italic;
+  white-space:pre-line;
+  background:rgba(255,255,255,0.04);
+  padding:32px;
+  border-radius:14px;
+  box-shadow:0 0 30px rgba(0,0,0,0.7);
+}
+
+.texto-longo {
+  font-size:19px;
+  white-space:pre-line;
+  background:rgba(255,255,255,0.03);
+  padding:30px;
+  border-radius:14px;
+  margin-top:40px;
+  box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+.carrossel img {
+  width:100%;
+  display:none;
+  border-radius:18px;
+  box-shadow:0 0 30px rgba(0,0,0,0.8);
+}
+.carrossel img.ativo { display:block; }
+
+.acao {
+  text-align:center;
+  padding:70px 0 40px;
+}
+button {
+  padding:18px 36px;
+  font-size:20px;
+  cursor:pointer;
+  background:#ff4d6d;
+  color:#fff;
+  border:none;
+  border-radius:40px;
+  box-shadow:0 0 20px rgba(255,77,109,0.4);
+}
+
+#amor {
+  display:none;
+  font-size:40px;
+  margin-top:45px;
+  animation: aparecer 1.6s ease;
+}
+
+@keyframes aparecer {
+  from { opacity:0; transform:scale(0.85); }
+  to { opacity:1; transform:scale(1); }
+}
+
+footer {
+  text-align:center;
+  padding:50px 20px 60px;
+  font-size:14px;
+  opacity:0.65;
+}
+
+  </style>
+</head>
+<body><header>
+  <h1>Diário de um menino apaixonado</h1>
+  <p>pequeno blog sobre amar sem economizar sentimento</p>
+</header><main><section class="capitulo">
+  <h2>Capítulo I — Quando ela chega</h2>
+  <div class="poema">
+ℰ𝓁𝒶 𝒸𝒽ℯℊ𝒶 𝓆𝓊𝒾ℯ𝓉𝒶, 𝓂ℯ𝒾ℴ 𝓉í𝓂𝒾𝒹𝒶, 𝓂𝒶𝓈 𝓆𝓊𝒶𝓃𝒹ℴ 𝒻𝒶𝓁𝒶… 𝒿á ℯ𝓇𝒶.ℬ𝓇𝒾𝓃𝒸𝒶𝓁𝒽ℴ𝓃𝒶 𝓃ℴ 𝓂ℴ𝓂ℯ𝓃𝓉ℴ ℯ𝓇𝓇𝒶𝒹ℴ, 𝒹ℴ𝓃𝒶 ℴ𝒻𝒾𝒸𝒾𝒶𝓁 𝒹𝒶𝓈 𝓅𝒾𝒶𝒹𝒶𝓈 𝓈ℯ𝓂 ℊ𝓇𝒶ç𝒶 (ℯ ℯ𝓊, 𝒽𝒶𝓉ℯ𝓇 𝓃ú𝓂ℯ𝓇ℴ 𝓊𝓂, 𝒸ℴ𝓂 ℴ𝓇ℊ𝓊𝓁𝒽ℴ).
+
+𝒞𝒶𝒷ℯ𝓁ℴ 𝓂ℯ𝒾ℴ 𝓇𝓊𝒾𝓋ℴ, 𝒸ℴ𝓇 𝒹ℯ 𝓅ô𝓇 𝒹ℴ 𝓈ℴ𝓁 𝓆𝓊ℯ 𝓃ãℴ 𝒹ℯ𝒸𝒾𝒹ℯ 𝓈ℯ 𝒻𝒾𝒸𝒶 ℴ𝓊 𝓋𝒶𝒾,
+
+𝓁𝒾𝓃𝒹𝒶 𝒶𝓉é 𝒷𝓇𝒶𝓋𝒶, 𝒾𝓃𝒿𝓊𝓈𝓉𝒾ç𝒶 𝒾𝓈𝓈ℴ.
+
+𝓈ℯ𝓇 𝒽𝒶𝓉ℯ𝓇 𝒹ℯ𝓁𝒶 é 𝓈ó 𝓂ℯ𝓊 𝒿ℯ𝒾𝓉ℴ 𝓉ℴ𝓇𝓉ℴ 𝒹ℯ 𝒶𝓂𝒶𝓇.
+
+  </div>
+</section><section class="capitulo">
+  <h2>Capítulo II — Ela é arte</h2>
+  <div class="texto-longo">
+ᴇʟᴀ ᴀɴᴅᴀ ᴄᴏᴍᴏ ǫᴜᴇᴍ sᴀɪᴜ ᴅᴇ sᴛʀᴀɴɢᴇʀ ᴛʜɪɴɢs, ᴍɪsᴛᴇʀɪᴏsᴀ, ɪɴᴛᴇɴsᴀ…sᴇ ᴏ ᴍᴜɴᴅᴏ ꜰᴏssᴇ séʀɪᴇ, ᴇʟᴀ sᴇʀɪᴀ ᴍɪɴʜᴀ ᴛᴇᴍᴘᴏʀᴀᴅᴀ ꜰᴀᴠᴏʀɪᴛᴀ.
+
+sᴇ ꜰᴏssᴇ ᴍúsɪᴄᴀ, sᴇʀɪᴀ ᴀǫᴜᴇʟᴀ ǫᴜᴇ ᴇᴜ ᴄᴏʟᴏᴄᴏ ɴᴏ ʀᴇᴘᴇᴀᴛ sᴇᴍ ɴᴜɴᴄᴀ ᴇɴᴊᴏᴀʀ.
+
+ᴇ ᴇʟᴀ é ᴀʀᴛᴇ. ᴀʀᴛᴇ ǫᴜᴇ ᴠɪʀᴏᴜ ᴍᴇᴜ ʟᴀʀ.
+
+  </div>
+</section><section class="capitulo">
+  <h2>Galeria — Momentos que ficam</h2>
+  <div class="carrossel" id="carrossel">
+    <img src="img/foto1.jpg" class="ativo" />
+    <img src="img/foto2.jpg" />
+    <img src="img/foto3.jpg" />
+    <img src="img/foto4.jpg" />
+    <img src="img/foto5.jpg" />
+  </div>
+</section><section class="capitulo">
+  <h2>Capítulo Final — Promessa</h2>
+  <div class="texto-longo">
+ℰ𝓂 𝓂𝒶𝒾ℴ 𝒹ℯ 2025 ℯ𝓊 𝓃ãℴ 𝒻𝒶𝓏𝒾𝒶 𝒾𝒹ℯ𝒾𝒶 𝒹ℯ 𝓆𝓊ℯ 𝒸ℴ𝓃𝒽ℯ𝒸ℯ𝓇𝒾𝒶 𝒶𝓁ℊ𝓊é𝓂 𝓆𝓊ℯ 𝓈ℯ 𝓉ℴ𝓇𝓃𝒶𝓇𝒾𝒶 𝓉ãℴ 𝒾𝓂𝓅ℴ𝓇𝓉𝒶𝓃𝓉ℯ 𝓅𝓇𝒶 𝓂𝒾𝓂.ℰ𝓊 𝓃ãℴ 𝒶𝒸𝓇ℯ𝒹𝒾𝓉ℴ ℯ𝓂 𝒶𝒸𝒶𝓈ℴ… 𝓋ℴ𝒸ê é 𝓅𝓇ℴ𝓋𝒶 𝒹ℯ 𝓅𝓇ℴ𝓅ó𝓈𝒾𝓉ℴ.
+
+𝒟ℯ𝓊𝓈 ℯ𝓂 𝓅𝓇𝒾𝓂ℯ𝒾𝓇ℴ 𝓁𝓊ℊ𝒶𝓇… 𝓋ℴ𝒸ê, ℯ ℯ𝓊 ℯ𝓂 ú𝓁𝓉𝒾𝓂ℴ.
+
+ℰ𝓊 𝓉ℯ 𝒶𝓂ℴ 𝓂𝓊𝒾𝓉ℴ.
+
+ℱℯ𝓁𝒾𝓏 𝒩𝒶𝓉𝒶𝓁, 𝓂ℯ𝓊 𝒶𝓂ℴ𝓇. 🎄❤️
+
+  </div>
+</section><section class="acao">
+  <button id="btnAmor">Clica aqui</button>
+  <div id="amor">EU TE AMO, RILARY ❤️</div>
+</section></main><footer>
+  escrito com verdade, sem prazo de validade.
+</footer><script>
+  console.log('[INIT] Diário carregado');
+
+  // Botão amor
+  const btnAmor = document.getElementById('btnAmor');
+  const amor = document.getElementById('amor');
+
+  btnAmor.addEventListener('click', () => {
+    console.log('[CLICK] Amor declarado');
+    amor.style.display = 'block';
+  });
+
+  // Carrossel
+  const imagens = document.querySelectorAll('#carrossel img');
+  let index = 0;
+  console.log('[CARROSSEL] imagens:', imagens.length);
+
+  setInterval(() => {
+    imagens[index].classList.remove('ativo');
+    index = (index + 1) % imagens.length;
+    imagens[index].classList.add('ativo');
+  }, 3200);
+
+  // Corações caindo
+  setInterval(() => {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+  }, 400);
+</script></body>
 </html>
